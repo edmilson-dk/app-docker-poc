@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  api:
+    build: .
+    container_name: api_container
+    image: api
+    restart: always
+    command: yarn dev
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./:/app/
+    environment:
+      - PORT=5001
